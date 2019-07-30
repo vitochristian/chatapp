@@ -12,17 +12,17 @@
 		  </div>
 		</div>
 		<div class="extra segment">
-		    <form class="ui reply form">
-			    <div class="field">
+			<%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path) do |f| %>
+		        <div class="field">
 			     <div class="ui fluid icon input">
-				  <input type="text" placeholder="Enter a message...">
-				  <div class="ui blue labeled icon button">
-			      <i class="icon edit"></i> Send
-			      </div>
+					<%= f.text_field :body %>
+				 <!-- <div class="ui blue bordered icon button"> -->
+			     <%= f.button 'Send <i class="yellow icon edit"></i>'.html_safe %>
+			      <!-- </div> -->
 				 </div>
 			    </div>
-		    </form>
-		  </div>
+		    <% end %>
+		</div>
 	</div>
 
 	<div class="four wide column">
